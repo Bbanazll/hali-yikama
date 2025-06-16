@@ -1,0 +1,314 @@
+/* Genel Stiller */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #28a745;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('res/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1s ease-out;
+    margin-bottom: 1rem;
+}
+
+.hero-section .lead {
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out;
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.feature span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.hero-cta {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-cta .btn {
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hero-cta .btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.hero-cta .btn-primary:hover {
+    background-color: #218838;
+    border-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.hero-cta .btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(33, 37, 41, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Hizmet Kartları */
+.card {
+    border: none;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+/* Hakkımızda Section */
+#hakkimizda {
+    background-color: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+#hakkimizda::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: white;
+    transform: skewY(-2deg);
+}
+
+/* İletişim Butonları */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.contact-buttons .btn {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.btn-instagram:hover {
+    background: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #FD1D1D, #405DE6, #5851DB);
+    transform: translateY(-3px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+}
+
+/* Animasyonlar */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 90vh;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.4rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-cta .btn {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+} 
